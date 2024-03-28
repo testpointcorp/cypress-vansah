@@ -55,7 +55,7 @@ module.exports = defineConfig({
 
 ```
 3. `Custom Commands`: Define a custom command in Cypress for sending the test results to Vansah. Place the command definition in commands.js and include it in your Cypress commands file. The custom command, [cy.sendResulttoVansah](/cypress/support/commands.js), is used to send test results.
-4. `Test Implementation`: Write your tests in a .cy.js file. Use cy.sendResulttoVansah in the afterEach hook to send test results after each test case.
+4. `Test Implementation`: Write your tests in a [.cy.js](cypress/e2e/vansah-io.cy.js) file. Use cy.sendResulttoVansah in the afterEach hook to send test results after each test case.
 ```js
 describe('Describe your Test Suite Headline', () => {
 
