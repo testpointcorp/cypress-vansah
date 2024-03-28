@@ -1,26 +1,33 @@
+// This configuration file is used to set up Cypress end-to-end (e2e) testing parameters,
+// specifically for projects that integrate with Vansah Test Management for Jira.
+// It leverages Cypress's `defineConfig` function to set various custom configuration options.
+
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
+    // The `setupNodeEvents` function allows for custom modifications to the Cypress configuration
+    // based on the project's specific needs before the tests are executed.
     setupNodeEvents(on, config) {
-      
+      // Specifies the base URL of the application under test, making it easier to reference during tests.
+      // In this case, tests are aimed at a Selenium practice site hosted on Vansah's domain.
+      config.baseUrl = 'https://selenium.vansah.io';
 
-      //Vansah Connect URL and Token
-       config.vansahConnectURL = "https://prod.vansahnode.app"
-       //Assigning and accessing the Vansah connect token from Env. variables
-       config.vansahConnectToken = process.env.VANSAH_TOKEN;
-      //Vansah Test Run Properties
-      //TestFolder ID
-      config.vansahTestFolderID = 'b97fe80b-0b6a-11ee-8e52-5658ef8eadd5'
-      //Issue Key
-      config.vansahIssueKey = 'TEST-1'
-      //Sprint Name
-      config.vansahSprintName = 'TEST Sprint 1'
-      //Environment Name
+      // Sets the URL for the Vansah Connect API, allowing Cypress tests to send results directly to Vansah.
+      config.vansahConnectURL = "https://prod.vansahnode.app"
+      // The Vansah connect token is securely accessed from environment variables,
+      // ensuring sensitive information is not hard-coded into the configuration.
+      config.vansahConnectToken = process.env.VANSAH_TOKEN;
+
+      // Additional Vansah-specific configurations:
+      // Defines the sprint name within Vansah where the test results will be recorded.
+      config.vansahSprintName = 'SM Sprint 1'
+      // Sets the testing environment name to help categorize the test runs.
       config.vansahEnvName = 'SYS'
-      //Release Name
+      // Specifies the release name associated with the test runs for tracking purposes.
       config.vansahReleaseName = 'Release 24'
-      
+
+      // Returns the modified configuration object to be used by Cypress.
       return config
     }
   },
