@@ -11,9 +11,26 @@ This tutorial guides you through the process of integrating Cypress tests with V
 
 ## Configuration
 
-1. `Setting Environment Variables`: Store your Vansah API token as an environment variable for security. Add the following to your .bashrc, .bash_profile, or .zshrc file:
+1. `Setting Environment Variables`: Store your Vansah API token as an environment variable for security. 
+
+For Windows (use cmd)
+```cmd
+setx VANSAH_TOKEN "your_vansah_api_token_here"
+
+```
+For macOS
 ```bash
-export VANSAH_TOKEN='your_vansah_api_token_here'
+echo 'export VANSAH_TOKEN="your_vansah_api_token_here"' >> ~/.bash_profile
+
+source ~/.bash_profile
+
+```
+For Linux (Ubuntu, Debian, etc.)
+```bash
+echo 'export VANSAH_TOKEN="your_vansah_api_token_here"' >> ~/.bashrc
+
+source ~/.bashrc
+
 ```
 2. `Cypress Configuration`: Modify your cypress.config.js to include Vansah specific configurations. Here's an example setup:
 
