@@ -5,7 +5,7 @@ This tutorial guides you through the process of integrating Cypress tests with V
 ## Prerequisites
 
 - Make sure that [`Vansah`](https://marketplace.atlassian.com/apps/1224250/vansah-test-management-for-jira?tab=overview&hosting=cloud) is installed in your Jira workspace
-- You need to Generate Vansah [`connect`](https://docs.vansah.com/docs-base/generate-a-vansah-api-token-from-jira-cloud/) token to authenticate with Vansah APIs.
+- You need to Generate Vansah [`connect`](https://help.vansah.com/en/articles/9824979-generate-a-vansah-api-token-from-jira) token to authenticate with Vansah APIs.
 - Node.js and npm installed
 - Cypress installed in your project
 
