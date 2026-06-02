@@ -14,7 +14,7 @@ module.exports = defineConfig({
       config.baseUrl = 'https://selenium.vansah.io';
 
       // Sets the URL for the Vansah Connect API, allowing Cypress tests to send results directly to Vansah.
-      config.vansahConnectURL = "https://prod.vansahnode.app"
+      config.vansahConnectURL = "https://prod.vansah.com"
       // The Vansah connect token is securely accessed from environment variables,
       // ensuring sensitive information is not hard-coded into the configuration.
       config.vansahConnectToken = process.env.VANSAH_TOKEN;
